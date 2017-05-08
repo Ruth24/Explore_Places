@@ -24,12 +24,12 @@ ko.applyBindings(vm);
 
 function getCityRests(cityName) {
     $('#modal_citySelect').closeModal();
-    Materialize.toast('Searching Restaurants in ' + cityName, 4000);
+    Materialize.toast('Searching Places in ' + cityName, 4000);
     count = 1;
     hopCity.push(cityName);
     vm.searchResults.removeAll();
     console.log('You will get ' + cityName);
-    //Fetch restaurants nearby
+    //Fetch places nearby
     $.ajax({
         url: '/findHangout',
         dataType: "json",
@@ -44,7 +44,7 @@ function getCityRests(cityName) {
                 business.newID = business.id + "123";
                 business.newIDlink = "#" + business.newID;
                 vm.searchResults.push(business);
-                var restaurant = business.name;
+                var place = business.name;
             });
             $('#findList').hide();
             $('#findList').fadeIn(3000);
@@ -54,7 +54,7 @@ function getCityRests(cityName) {
             $('.modal-trigger').leanModal();
         },
         error: function(xhr, status, error) {
-            console.log("Restaurant search failed");
+            console.log("Search failed");
         }
     });
 }
@@ -73,7 +73,7 @@ function createHopList() {
         hopTemp = hopTemp.substring(2);
         var temp = {
             "city": hopCity[0],
-            "restaurants": hopTemp
+            "places": hopTemp
         };
         finalHopList.push(temp);
         hopRest = [];

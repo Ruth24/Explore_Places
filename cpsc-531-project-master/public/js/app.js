@@ -55,7 +55,7 @@ function showPosition(position) {
     });
 
 
-    //Fetch restaurants nearby
+    //Fetch places nearby
     $.ajax({
         url: '/find',
         dataType: "json",
@@ -73,12 +73,12 @@ function showPosition(position) {
                 business.newID = business.id + "123";
                 business.newIDlink = "#" + business.newID;
                 vm.searchResults.push(business);
-                var restaurant = business.name;
+                var place = business.name;
                 $.ajax({
                     url: '/review',
                     dataType: "json",
                     data: {
-                        "restaurant": restaurant
+                        "place": place
                     },
                     type: 'GET',
                     success: function(result) {
@@ -115,7 +115,7 @@ function showPosition(position) {
             $('.modal-trigger').leanModal();
         },
         error: function(xhr, status, error) {
-            console.log("Restaurant search failed");
+            console.log("Search failed");
         }
     });
 }
@@ -173,7 +173,7 @@ function submitReview(dataID) {
     var starRating = $("." + dataID + " :selected").val();
     starRating = Number(starRating);
     var writtenReview = $("." + dataID + " textarea").val();
-    var restaurantName = $("." + dataID + " .placeName").text();
+    var placeName = $("." + dataID + " .placeName").text();
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1; //January is 0!
@@ -184,7 +184,7 @@ function submitReview(dataID) {
         url: '/review',
         dataType: "json",
         data: {
-            "restaurant": restaurantName,
+            "place": placeName,
             "rating": starRating,
             "written": writtenReview,
             "restaurantID": dataID,

@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-        <title>Food Near Me</title>
+        <title>Places to Hangout Near Me</title>
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" media="screen,projection"/>
@@ -14,7 +14,7 @@
     <body>
         <nav class="light-blue lighten-1" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">Food Near Me</a>
+                <a id="logo-container" href="#" class="brand-logo">Places to Hangout Near Me</a>
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <% if (user.local.email) { %>
@@ -39,7 +39,7 @@
                 <br><br>
                 <h1 class="header center orange-text">Hangout planner</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">Plan a hangout with your friends and family by selecting multiple restaurants and places!</h5>
+                    <h5 class="header col s12 light">Plan a hangout with your friends and family by selecting multiple places and places!</h5>
                 </div>
                 <div class="row center">
                     <a href="#modal_citySelect" id="selector" class="modal-trigger btn btn-large waves-effect waves-light orange"><i class="material-icons left">add_location</i>Select a City</a>
@@ -63,7 +63,7 @@
                                 <p data-bind="text: $data.location.display_address[0]"></p>
                                 <p data-bind="text: $data.location.display_address[1]"></p>
                                 <h6 data-bind="text: $data.display_phone"></h6>
-                                <a data-bind="click: addRestToList.bind($data, $data.name)" class="waves-effect waves-light btn-large orange"><i class="material-icons right">speaker_notes</i>Add to Food Hop!</a>
+                                <a data-bind="click: addRestToList.bind($data, $data.name)" class="waves-effect waves-light btn-large orange"><i class="material-icons right">speaker_notes</i>Add to Place Hop!</a>
                                 
                                 <!-- Modal Structure -->
                                 <div data-bind="attr: {id: $data.newID}" class="modal bottom-sheet">

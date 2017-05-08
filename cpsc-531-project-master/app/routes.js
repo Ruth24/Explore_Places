@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
         res.render('index.ejs');
     });
 
-    // FIND RESTAURANT SECTION =========================
+    // FIND PLACES SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('res_view.ejs', {
             user: req.user
@@ -143,10 +143,9 @@ module.exports = function(app, passport) {
 
     app.post('/review', function(req, res) {
         var tempReview = new reviews({
-            restaurant: req.body.restaurant,
+            place: req.body.place,
             rating: req.body.rating,
             written: req.body.written,
-            restaurantID: req.body.restaurantID,
             date: req.body.date,
             user: req.body.user,
             image: req.body.image
@@ -164,7 +163,7 @@ module.exports = function(app, passport) {
 
     app.get('/review', function(req, res) {
         reviews.find({
-            restaurant: req.query.restaurant
+            place: req.query.place
         }, function(err, obj) {
             if (err) {
                 res.json({
