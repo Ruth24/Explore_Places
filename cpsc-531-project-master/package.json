@@ -1,13 +1,13 @@
 {
-  "name": "foodnearme",
+  "name": "placestohangoutnearme",
   "version": "1.0.0",
-  "description": "An app that helps you find nearby food places and plan an itinerary.",
+  "description": "An app that helps you find nearby places to hangout and plan an itinerary.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Gaurang Shah",
+  "author": "Ruth D'monte",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
