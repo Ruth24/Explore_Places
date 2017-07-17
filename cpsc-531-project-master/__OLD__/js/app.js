@@ -164,7 +164,7 @@ function submitReview(dataID) {
             $("." + dataID + " .submitResult").hide();
             $("." + dataID + " .submitResult").fadeIn();
 
-            //Adding review that was just posted to page. When user clicks 'find food' again or reloads page,
+            //Adding review that was just posted to page. When user clicks 'find place to hangout' again or reloads page,
             //this review will be generated on the page get '/review' request, and will have a normal index.
             //For now, we give it a random index to avoid same index conflicts
             var index = Math.floor((Math.random() * 1000000000) + 100);
